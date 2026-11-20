@@ -1,0 +1,465 @@
+
+/* =================================
+   PERSONAL LIFE ASSISTANT
+   Main Design System
+================================= */
+
+:root {
+  --primary: #1769e0;
+  --primary-dark: #1054bd;
+  --primary-light: #eaf2ff;
+  --background: #f5f8fd;
+  --surface: #ffffff;
+  --text: #17243a;
+  --muted: #8290a5;
+  --border: #e7edf5;
+  --success: #20a675;
+  --radius: 18px;
+  --shadow: 0 5px 20px rgba(30, 70, 130, 0.07);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+#app {
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+/* Header */
+
+.app-header {
+  background: var(--surface);
+  padding: 20px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.profile-button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Main content */
+
+.main-content {
+  padding: 22px 18px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.greeting {
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+/* Voice capture */
+
+.capture-card {
+  background: linear-gradient(135deg, #1769e0, #428af1);
+  border-radius: 24px;
+  padding: 23px;
+  color: white;
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+}
+
+.capture-card h2 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.capture-card p {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 18px;
+}
+
+.capture-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.capture-button {
+  background: white;
+  color: var(--primary);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: bold;
+  flex: 1;
+}
+
+/* Section heading */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 0 14px;
+}
+
+.section-heading h2 {
+  font-size: 18px;
+}
+
+.section-link {
+  background: transparent;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Cards */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 17px;
+  box-shadow: var(--shadow);
+  margin-bottom: 13px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.card-description {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Bottom Navigation */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: white;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 5px calc(10px + env(safe-area-inset-bottom));
+}
+
+.nav-item {
+  background: transparent;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  padding: 5px 10px;
+  min-width: 60px;
+}
+
+.nav-item.active {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.nav-icon {
+  font-size: 21px;
+}
+
+/* Responsive */
+
+@media (min-width: 700px) {
+  .main-content {
+    padding: 30px;
+  }
+
+  .bottom-nav {
+    max-width: 700px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--border);
+    border-radius: 18px 18px 0 0;
+  }
+}
+
+.nav-icon svg,
+.search-box svg,
+.capture-button svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capture-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 13px;
+  margin-bottom: 15px;
+}
+
+.search-box svg {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 0;
+  color: var(--text);
+  background: transparent;
+}
+
+.nav-item {
+  min-height: 52px;
+}
+/* Large Task Checkbox */
+.task-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+
+  border: 2px solid #1769e0;
+  border-radius: 8px;
+  background: #ffffff;
+
+  display: inline-grid;
+  place-content: center;
+
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.task-checkbox:checked {
+  background: #20a675;
+  border-color: #20a675;
+}
+
+.task-checkbox:checked::after {
+  content: "";
+  width: 9px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+/* Beautiful Delete Button */
+
+.delete-button {
+  background: #fff0f0;
+  color: #dc3545;
+  border: 1px solid #ffd6d6;
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-button:active {
+  background: #ffe0e0;
+}
+.task-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-row .task-checkbox {
+  order: 1;
+}
+
+.task-row .task-text {
+  order: 2;
+}
+
+.task-row .delete-button {
+  order: 3;
+  width: 100%;
+  margin-top: 5px;
+}
+.task-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+}
+
+.task-text {
+  flex: 1;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.delete-button {
+  background: #fff0f0;
+  color: #dc3545;
+  border: 1px solid #ffd6d6;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Delete Confirmation Dialog */
+
+.delete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 30, 55, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.delete-dialog {
+  width: 100%;
+  max-width: 360px;
+  background: white;
+  border-radius: 20px;
+  padding: 25px 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.delete-dialog h2 {
+  font-size: 21px;
+  margin-bottom: 10px;
+  color: #17243a;
+}
+
+.delete-dialog p {
+  color: #8290a5;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.cancel-button,
+.confirm-delete-button {
+  flex: 1;
+  min-height: 48px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.cancel-button {
+  background: #edf2f8;
+  color: #34445c;
+}
+
+.confirm-delete-button {
+  background: #dc3545;
+  color: white;
+}
+/* Notes writing area */
+
+#noteText {
+  display: block;
+  width: 100%;
+  max-height: 600px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  resize: none;
+  box-sizing: border-box;
+}
+#noteTitle,
+#noteText,
+#editNoteTitle,
+#editNoteText {
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+  overflow-anchor: none;
+  -webkit-overflow-scrolling: touch;
+}
+.task-checkbox {
+  accent-color: #16a34a !important;
+  accent-color: green !important;
+}
